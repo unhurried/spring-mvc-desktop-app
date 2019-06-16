@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate=~{base}>
+<body>
+	<div layout:fragment="contents">
+
+		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3">
+			<h2>List</h2>
+			<a class="btn btn-primary" th:href="@{todos/form}">New Item</a>
+		</div>
+
+		<!-- Bootstrap4 Tables: https://getbootstrap.com/docs/4.3/content/tables/ -->
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th class="">Category</th>
+					<th class="">Title</th>
+					<th style="width:175px;"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="todo: ${toDoList}">
+					<td th:text="${todo.title}"></td>
+					<td th:text="${todo.category}"></td>
+					<td class="text-center">
+						<a th:href="@{/todos/{id}(id=${todo.id})}" class="btn btn-secondary btn-sm mr-2">Update</a>
+						<form class="d-inline" method="post" th:action="@{/todos/{id}/delete(id=${todo.id})}">
+							<button class="btn btn-danger btn-sm" type="submit">Delete</button>
+						</form>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

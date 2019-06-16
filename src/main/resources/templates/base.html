@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+	<style>
+		/* Set the height of sidebar to fit to the viewport height. */
+		@media (min-width: 768px) {
+			.sidebar {
+				min-height: calc(100vh - 56px);
+				overflow: hidden;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- To change color scheme for the navbar use navbar-xxx and bg-xxx (for background color).
+	     cf. https://getbootstrap.com/docs/4.0/components/navbar/#color-schemes -->
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">ToDo Management System</a>
+		<!-- https://getbootstrap.com/docs/4.0/components/navbar/#toggler -->
+		<button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#menu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+
+	<div class="container-fluid" style="max-width:1024px; margin-left:0;">
+		<div class="row">
+			<!-- Show a sidebar for medium devices and larger, and collapse it for smaller devices.
+			     Though .collapse is required to use collapse plugin, it also adds "display:none".
+			     .d-md-blok here is to override the "display:none" when for larger devices.
+			     cf. https://getbootstrap.com/docs/4.0/components/collapse/
+			         https://stackoverflow.com/questions/37113533/v4-bootstrap-full-height-sidebar -->
+			<div class="col-md-3 navbar collapse d-md-block bg-light align-items-start sidebar" id="menu">
+				<ul class="nav flex-column">
+					<li class="nav-item"><a class="nav-link" th:href="@{/todos}">List</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/todos/form}">New Item</a></li>
+				</ul>
+			</div>
+			<div layout:fragment="contents" class="col m-3"></div>
+		</div>
+	</div>
+	<script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</body>
+</html>

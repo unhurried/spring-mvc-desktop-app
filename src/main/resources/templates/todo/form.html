@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate=~{base}>
+<body>
+	<div layout:fragment="contents">
+		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3">
+			<h2>Edit</h2>
+			<a class="btn btn-primary" href="/todos">Back to List</a>
+		</div>
+
+		<div class="alert alert-success" th:if="${message}" th:text="${message}"></div>
+		<div class="alert alert-danger" th:if="${error}" th:text="${error}"></div>
+
+		<!-- Bootstrap4 Form: https://getbootstrap.com/docs/4.3/components/forms/ -->
+		<form th:action="@{/todos/submit}" method="post" th:object="${toDoForm}">
+			<input type="hidden" th:field="*{id}">
+			<div class="form-group form-row">
+				<!-- .col-form-label centers the labe vertically. -->
+				<label class="col-form-label col-sm-3" for="title">Title</label>
+				<div class="col">
+					<input type="text" class="form-control" name="title" th:field="*{title}"
+							th:classappend="${#fields.hasErrors('title')}? is-invalid">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+				</div>
+			</div>
+			<div class="form-group form-row">
+				<label class="col-form-label col-sm-3" for="category">Category</label>
+				<div class="col">
+					<select class="form-control col" name="category" th:field="*{category}"
+							th:classappend="${#fields.hasErrors('category')}? is-invalid">
+						<option value="one">one</option>
+						<option value="two">two</option>
+						<option value="three">three</option>
+					</select>
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
+				</div>
+			</div>
+			<div class="form-group form-row">
+				<label class="col-form-label col-sm-3" for="content">Content</label>
+				<div class="col">
+					<textarea class="form-control col" name="content" th:field="*{content}"
+							th:classappend="${#fields.hasErrors('content')}? is-invalid"></textarea>
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></div>
+				</div>
+			</div>
+			<div class="form-group row justify-content-center">
+				<input class="form-control col-sm-4 btn-primary" type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

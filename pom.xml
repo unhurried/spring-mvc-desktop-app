@@ -6,14 +6,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.5.RELEASE</version>
+		<version>2.2.0.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-mvc-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-mvc-example</name>
-	<description>An example of Spring MVC based web application</description>
+	<artifactId>spring-mvc-desktop-app</artifactId>
+	<version>1.0.0</version>
+	<name>spring-mvc-desktop-app</name>
+	<description>A desktop application project that runs Spring MVC locally and accessed via a web browser.</description>
 
 	<properties>
 		<java.version>1.8</java.version>

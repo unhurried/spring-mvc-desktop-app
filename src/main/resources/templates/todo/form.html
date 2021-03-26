@@ -4,7 +4,7 @@
 <body>
 	<div layout:fragment="contents">
 		<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-3">
-			<h2>Edit</h2>
+			<h2 th:text="${toDoForm.id}? 'Update' : 'Create'"></h2>
 			<a class="btn btn-primary" href="/todos">Back to List</a>
 		</div>
 

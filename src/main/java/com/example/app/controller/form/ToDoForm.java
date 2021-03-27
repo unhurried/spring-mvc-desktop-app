@@ -13,14 +13,14 @@ public class ToDoForm {
 
 	// Validation can be configured with JSR303 Bean Validation annotations.
 	// cf. https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Bean_Validation_Cheat_Sheet.md
-    @NotNull
-    @Size(min = 1, max = 31)
-    private String title;
+	@NotNull
+	@Size(min = 1, max = 31)
+	private String title;
 
-    @NotNull
-    @Pattern(regexp = "(one|two|three)")
-    private String category;
+	@NotNull
+	@Pattern(regexp = "(one|two|three)")
+	private String category;
 
-    @Size(max = 127)
-    private String content;
+	@Size(max = 127)
+	private String content;
 }

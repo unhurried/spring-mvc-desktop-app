@@ -16,7 +16,7 @@
 	<description>A desktop application project that runs Spring MVC locally and accessed via a web browser.</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>1.11</java.version>
 	</properties>
 
 	<dependencies>

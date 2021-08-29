@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" />
 	<style>
 		/* Set the height of sidebar to fit to the viewport height. */
 		@media (min-width: 768px) {
@@ -16,9 +16,9 @@
 	<!-- To change color scheme for the navbar use navbar-xxx and bg-xxx (for background color).
 	     cf. https://getbootstrap.com/docs/4.0/components/navbar/#color-schemes -->
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">ToDo Management System</a>
+		<a class="navbar-brand ms-3" href="#">ToDo Management System</a>
 		<!-- https://getbootstrap.com/docs/4.0/components/navbar/#toggler -->
-		<button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#menu">
+		<button class="navbar-toggler d-md-none me-3" type="button" data-toggle="collapse" data-target="#menu">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 	</nav>
@@ -39,7 +39,6 @@
 			<div layout:fragment="contents" class="col m-3"></div>
 		</div>
 	</div>
-	<script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-	<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.min.js}"></script>
 </body>
 </html>
